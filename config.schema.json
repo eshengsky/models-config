@@ -1,0 +1,187 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AI Models Configuration",
+  "type": "object",
+  "required": ["version", "lastUpdated", "providers"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Configuration version following semver"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last update timestamp"
+    },
+    "updateUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "Configuration update URL"
+    },
+    "providers": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/Provider"
+      }
+    }
+  },
+  "definitions": {
+    "Provider": {
+      "type": "object",
+      "required": ["id", "name", "apiHost", "enabled", "requiresApiKey", "models"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique provider identifier"
+        },
+        "name": {
+          "type": "string",
+          "description": "Display name"
+        },
+        "description": {
+          "type": "string",
+          "description": "Provider description"
+        },
+        "logo": {
+          "type": "string",
+          "description": "Logo image URL or base64 encoded image"
+        },
+        "apiHost": {
+          "type": "string",
+          "format": "uri",
+          "description": "API base URL"
+        },
+        "homeUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Official website or console URL"
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "Whether the provider is enabled"
+        },
+        "requiresApiKey": {
+          "type": "boolean",
+          "description": "Whether API key is required"
+        },
+        "models": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Model"
+          }
+        }
+      }
+    },
+    "Model": {
+      "type": "object",
+      "required": ["id", "name", "type", "enabled", "contextWindow", "capabilities", "pricing"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Model identifier"
+        },
+        "name": {
+          "type": "string",
+          "description": "Display name"
+        },
+        "description": {
+          "type": "string",
+          "description": "Model description"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["chat", "embedding", "rerank"],
+          "description": "Model type"
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "Whether the model is enabled"
+        },
+        "contextWindow": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Context window size in tokens"
+        },
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Maximum output tokens"
+        },
+        "embeddingDimension": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Embedding dimension (for embedding models)"
+        },
+        "capabilities": {
+          "$ref": "#/definitions/Capabilities"
+        },
+        "pricing": {
+          "$ref": "#/definitions/Pricing"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Model tags for categorization"
+        }
+      }
+    },
+    "Capabilities": {
+      "type": "object",
+      "required": ["vision", "functionCalling", "webSearch", "streaming", "reasoning"],
+      "properties": {
+        "vision": {
+          "type": "boolean",
+          "description": "Supports image input"
+        },
+        "functionCalling": {
+          "type": "boolean",
+          "description": "Supports function/tool calling"
+        },
+        "webSearch": {
+          "type": "boolean",
+          "description": "Supports web search"
+        },
+        "streaming": {
+          "type": "boolean",
+          "description": "Supports streaming output"
+        },
+        "reasoning": {
+          "type": "boolean",
+          "description": "Reasoning model with chain-of-thought"
+        },
+        "jsonMode": {
+          "type": "boolean",
+          "description": "Supports JSON output mode"
+        },
+        "systemMessage": {
+          "type": "boolean",
+          "description": "Supports system messages"
+        }
+      }
+    },
+    "Pricing": {
+      "type": "object",
+      "required": ["currency", "input", "output"],
+      "properties": {
+        "currency": {
+          "type": "string",
+          "enum": ["USD", "CNY", "EUR"],
+          "description": "Currency unit"
+        },
+        "input": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Input price per token"
+        },
+        "output": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Output price per token"
+        }
+      }
+    }
+  }
+}
