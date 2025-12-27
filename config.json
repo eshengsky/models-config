@@ -166,7 +166,7 @@
     
     "dashscope": {
       "id": "dashscope",
-      "name": "Alibaba Cloud Bailian",
+      "name": "阿里云百炼",
       "description": "Qwen series models from Alibaba Cloud",
       "logo": "",
       "apiHost": "https://dashscope.aliyuncs.com/compatible-mode/v1",
