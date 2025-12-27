@@ -11,7 +11,6 @@
       "logo": "",
       "apiHost": "https://api.openai.com",
       "homeUrl": "https://platform.openai.com",
-      "enabled": true,
       "requiresApiKey": true,
       "models": [
         {
@@ -19,7 +18,6 @@
           "name": "GPT-4o",
           "description": "Latest and most capable multimodal model",
           "type": "chat",
-          "enabled": true,
           "contextWindow": 128000,
           "maxOutputTokens": 16384,
           "capabilities": {
@@ -43,7 +41,6 @@
           "name": "GPT-4o Mini",
           "description": "Faster and cheaper GPT-4o variant",
           "type": "chat",
-          "enabled": true,
           "contextWindow": 128000,
           "maxOutputTokens": 16384,
           "capabilities": {
@@ -67,7 +64,6 @@
           "name": "o1",
           "description": "Reasoning model for complex problem solving",
           "type": "chat",
-          "enabled": true,
           "contextWindow": 200000,
           "maxOutputTokens": 100000,
           "capabilities": {
@@ -91,7 +87,6 @@
           "name": "Text Embedding 3 Large",
           "description": "Latest and most capable embedding model",
           "type": "embedding",
-          "enabled": true,
           "contextWindow": 8192,
           "embeddingDimension": 3072,
           "capabilities": {
@@ -118,7 +113,6 @@
       "logo": "",
       "apiHost": "https://api.anthropic.com",
       "homeUrl": "https://console.anthropic.com",
-      "enabled": true,
       "requiresApiKey": true,
       "models": [
         {
@@ -126,7 +120,6 @@
           "name": "Claude Sonnet 4",
           "description": "Latest Claude 4 with extended thinking",
           "type": "chat",
-          "enabled": true,
           "contextWindow": 200000,
           "maxOutputTokens": 8096,
           "capabilities": {
@@ -150,7 +143,6 @@
           "name": "Claude Opus 4",
           "description": "Most powerful Claude model",
           "type": "chat",
-          "enabled": true,
           "contextWindow": 200000,
           "maxOutputTokens": 8096,
           "capabilities": {
@@ -179,7 +171,6 @@
       "logo": "",
       "apiHost": "https://dashscope.aliyuncs.com/compatible-mode/v1",
       "homeUrl": "https://bailian.console.aliyun.com",
-      "enabled": true,
       "requiresApiKey": true,
       "models": [
         {
@@ -187,7 +178,6 @@
           "name": "Qwen Max",
           "description": "Most capable Qwen model",
           "type": "chat",
-          "enabled": true,
           "contextWindow": 8192,
           "maxOutputTokens": 8192,
           "capabilities": {
@@ -211,7 +201,6 @@
           "name": "Qwen Plus",
           "description": "Balanced performance and cost",
           "type": "chat",
-          "enabled": true,
           "contextWindow": 131072,
           "maxOutputTokens": 8192,
           "capabilities": {
@@ -235,7 +224,6 @@
           "name": "Qwen VL Plus",
           "description": "Vision-language understanding model",
           "type": "chat",
-          "enabled": true,
           "contextWindow": 8192,
           "maxOutputTokens": 8192,
           "capabilities": {
@@ -259,7 +247,6 @@
           "name": "Text Embedding v3",
           "description": "General-purpose text embedding model",
           "type": "embedding",
-          "enabled": true,
           "contextWindow": 8192,
           "embeddingDimension": 1536,
           "capabilities": {
@@ -286,7 +273,6 @@
       "logo": "",
       "apiHost": "https://api.deepseek.com",
       "homeUrl": "https://platform.deepseek.com",
-      "enabled": true,
       "requiresApiKey": true,
       "models": [
         {
@@ -294,7 +280,6 @@
           "name": "DeepSeek Chat",
           "description": "General-purpose conversational model",
           "type": "chat",
-          "enabled": true,
           "contextWindow": 64000,
           "maxOutputTokens": 8192,
           "capabilities": {
@@ -318,7 +303,6 @@
           "name": "DeepSeek Reasoner",
           "description": "Reasoning model with chain-of-thought",
           "type": "chat",
-          "enabled": true,
           "contextWindow": 64000,
           "maxOutputTokens": 8192,
           "capabilities": {
